@@ -36,15 +36,21 @@ hit F12) for the true image.
 
 ## Install
 
-1. Clone this repo and build the add-on zip:
-   ```
-   git clone https://github.com/cozmiccle/blender-cycles-bloom.git
-   cd blender-cycles-bloom
-   blender --command extension build --source-dir . --output-filepath cycles_bloom.zip
-   ```
-2. In Blender: **Edit → Preferences → Get Extensions → Install from Disk…** and
-   pick `cycles_bloom.zip` (or point *Install from Disk* at this folder).
-3. Set the render engine to **Cycles**; open **Properties → Render → Bloom**.
+Any of the following works — then in Blender go to
+**Edit → Preferences → Get Extensions → Install from Disk…**, pick the zip, set
+the render engine to **Cycles**, and open **Properties → Render → Bloom**.
+
+- **From a release (recommended):** download `cycles_bloom.zip` from the
+  [latest release](https://github.com/cozmiccle/blender-cycles-bloom/releases/latest).
+- **From source:** click green **Code → Download ZIP** (or the *Source code (zip)*
+  on a release). Install it as-is — Blender strips the top-level folder and finds
+  the manifest automatically, so the source zip installs directly.
+- **Build it yourself:**
+  ```
+  git clone https://github.com/cozmiccle/blender-cycles-bloom.git
+  cd blender-cycles-bloom
+  blender --command extension build --source-dir . --output-filepath cycles_bloom.zip
+  ```
 
 ## Settings
 
