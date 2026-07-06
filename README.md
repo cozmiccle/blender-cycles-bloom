@@ -36,7 +36,7 @@ hit F12) for the true image.
 
 ## Install
 
-1. Clone this repo and build the add-on zip (or grab a prebuilt zip from Releases):
+1. Clone this repo and build the add-on zip:
    ```
    git clone https://github.com/cozmiccle/blender-cycles-bloom.git
    cd blender-cycles-bloom
