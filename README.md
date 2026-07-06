@@ -17,13 +17,13 @@ mip-pyramid Bloom, which runs on the GPU (Metal) compositor.
 
 The viewport can preview that bloom live, in one of two modes:
 
-| Preview Mode | What it is | Matches F12? | Cost |
+| Preview Mode | What it is | Matches render? | Cost |
 |--------------|-----------|--------------|------|
-| **Accurate** | Blender's native viewport compositor (`use_compositor = ALWAYS`) — the *same* node tree that F12 renders | Pixel-identical | Heavier |
+| **Accurate** | Blender's native viewport compositor (`use_compositor = ALWAYS`) — the *same* node tree when rendered | Pixel-identical | Heavier |
 | **Fast** | A custom GPU dual-Kawase bloom drawn over the viewport (Metal, `GPUShaderCreateInfo`) | Approximate (screen-space) | Interactive |
 
 **Final renders always use the Accurate composite.** The Fast preview is a
-viewport draw pass and cannot affect F12, so it defers to the accurate composite:
+viewport draw pass and cannot affect triggered render, so it defers to the accurate composite:
 
 - **on render** — automatically (F12 always renders the node group);
 - **on toggle** — set *Preview Mode* back to *Accurate* to see the exact result.
@@ -36,21 +36,13 @@ hit F12) for the true image.
 
 ## Install
 
-Any of the following works — then in Blender go to
-**Edit → Preferences → Get Extensions → Install from Disk…**, pick the zip, set
+Any of the following works — then in Blender, set
 the render engine to **Cycles**, and open **Properties → Render → Bloom**.
 
-- **From a release (recommended):** download `cycles_bloom.zip` from the
+- **From a release:** download `cycles_bloom.zip` from the
   [latest release](https://github.com/cozmiccle/blender-cycles-bloom/releases/latest).
 - **From source:** click green **Code → Download ZIP** (or the *Source code (zip)*
-  on a release). Install it as-is — Blender strips the top-level folder and finds
-  the manifest automatically, so the source zip installs directly.
-- **Build it yourself:**
-  ```
-  git clone https://github.com/cozmiccle/blender-cycles-bloom.git
-  cd blender-cycles-bloom
-  blender --command extension build --source-dir . --output-filepath cycles_bloom.zip
-  ```
+  on a release). Drag and drop the zip into blender.
 
 ## Settings
 
