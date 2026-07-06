@@ -1,0 +1,17 @@
+schema_version = "1.0.0"
+
+id = "cycles_bloom"
+version = "1.0.0"
+name = "Cycles Bloom"
+tagline = "Metal-accelerated bloom for Cycles with live viewport preview"
+maintainer = "Ethan McCully <eqmccully@icloud.com>"
+type = "add-on"
+
+# Baseline is Blender 5.1; tested/guaranteed through 5.2 LTS.
+# blender_version_max is intentionally omitted so the add-on keeps loading on
+# newer builds (with only Blender's soft "untested" notice) while drifting API
+# is handled by feature detection at runtime.
+blender_version_min = "5.1.0"
+
+tags = ["Render", "Compositing"]
+license = ["SPDX:GPL-3.0-or-later"]
